@@ -3,8 +3,9 @@
 buildscript {
     ext {
         compileSdkVersion = 27
+        buildToolsVersion = '27.0.3'
 
-        kotlinVersion = '1.2.50'
+        kotlinVersion = '1.2.51'
         supportLibVersion = '27.1.1'
     }
     repositories {
