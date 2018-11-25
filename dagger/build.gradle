@@ -49,12 +49,12 @@ dependencies {
     implementation "com.google.dagger:dagger:${project.ext.daggerVersion}"
     implementation "com.google.dagger:dagger-android:${project.ext.daggerVersion}"
     implementation "com.google.dagger:dagger-android-support:${project.ext.daggerVersion}"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${rootProject.ext.kotlinVersion}"
 
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    testImplementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion"
+    testImplementation "org.jetbrains.kotlin:kotlin-test-junit:${rootProject.ext.kotlinVersion}"
 }
 
 archivesBaseName = 'org.mobiletoolkit.android.databinding.dagger'
