@@ -1,4 +1,4 @@
-package org.mobiletoolkit.android.databinding.dagger
+package org.mobiletoolkit.android.databinding.dagger.support
 
 import android.databinding.DataBindingUtil
 import android.databinding.ViewDataBinding
@@ -6,14 +6,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import dagger.android.DaggerDialogFragment
+import dagger.android.support.DaggerDialogFragment
 
 /**
  * Created by Sebastian Owodzin on 05/04/2018.
- *
- * @deprecated Framework fragments are deprecated in Android P; prefer {@code
- *     org.mobiletoolkit.android.databinding.dagger.support.BindingDialogFragment} to use a support-library-friendly
- *     dialog fragment implementation.
  */
 abstract class BindingDialogFragment<T : ViewDataBinding>(
     protected val layoutId: Int

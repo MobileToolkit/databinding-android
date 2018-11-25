@@ -12,7 +12,7 @@ import dagger.android.support.DaggerFragment
  * Created by Sebastian Owodzin on 04/04/2018.
  */
 abstract class BindingFragment<T : ViewDataBinding>(
-        protected val layoutId: Int
+    protected val layoutId: Int
 ) : DaggerFragment() {
 
     protected lateinit var binding: T

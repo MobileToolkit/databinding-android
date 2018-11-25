@@ -12,7 +12,7 @@ import android.view.ViewGroup
  * Created by Sebastian Owodzin on 05/04/2018.
  */
 abstract class BindingDialogFragment<T : ViewDataBinding>(
-        protected val layoutId: Int
+    protected val layoutId: Int
 ) : DialogFragment() {
 
     protected lateinit var binding: T
