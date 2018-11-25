@@ -1,9 +1,9 @@
 plugins {
-    id 'com.jfrog.bintray' version '1.7.3'
-    id 'com.github.dcendents.android-maven' version '1.5'
+    id 'com.jfrog.bintray' version '1.8.4'
 }
 
 apply plugin: 'com.android.library'
+apply plugin: 'digital.wup.android-maven-publish'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
@@ -13,13 +13,14 @@ android {
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 27
-        versionCode 1
-        versionName '0.1.0'
-
+        targetSdkVersion 28
+        versionCode rootProject.ext.gitVersionCode
+        versionName rootProject.ext.gitVersionName
         testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
-
-        archivesBaseName = 'databinding'
+        consumerProguardFiles 'proguard-rules.pro'
+    }
+    dataBinding {
+        enabled = true
     }
     buildTypes {
         release {
@@ -27,36 +28,38 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    dataBinding {
-        enabled = true
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+    lintOptions {
+//        htmlReport true
+//        htmlOutput file('lint-report.html')
+        abortOnError true
+        warningsAsErrors true
     }
 }
 
 dependencies {
     implementation "com.android.support:appcompat-v7:${rootProject.ext.androidSupportLibraryVersion}"
-    implementation "com.android.support:recyclerview-v7:${rootProject.ext.androidSupportLibraryVersion}"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${rootProject.ext.kotlinVersion}"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
 
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    testImplementation "org.jetbrains.kotlin:kotlin-test-junit:${rootProject.ext.kotlinVersion}"
+    testImplementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion"
 }
 
-group = 'org.mobiletoolkit.android.databinding'
-version = android.defaultConfig.versionName
+archivesBaseName = 'org.mobiletoolkit.android.databinding.core'
 
-install {
-    repositories.mavenInstaller {
-        pom.project {
-            name project.name //'databinding'
-            url 'https://github.com/MobileToolkit/databinding-android'
-            inceptionYear '2018'
+publishing {
+    publications {
+        databinding(MavenPublication) {
+            groupId = 'org.mobiletoolkit.android.databinding'
+            artifactId = 'databinding'
+            version = android.defaultConfig.versionName
 
-            packaging 'aar'
-            groupId 'org.mobiletoolkit.android.databinding'
-            artifactId project.name //'databinding'
-            version android.defaultConfig.versionName
+            from components.android
         }
     }
 }
@@ -64,11 +67,12 @@ install {
 bintray {
     user = rootProject.ext.bintrayUser
     key = rootProject.ext.bintrayAPIKey
-    configurations = ['archives']
+    dryRun = false
+    override = false
     publish = true
     pkg {
         repo = 'public'
-        name = project.name //'databinding'
+        name = project.name
         userOrg = 'mobiletoolkit'
         licenses = ['MIT']
         vcsUrl = 'https://github.com/MobileToolkit/databinding-android.git'
@@ -83,5 +87,5 @@ bintray {
             }
         }
     }
+    publications = ['databinding']
 }
-

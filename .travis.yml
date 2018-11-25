@@ -6,13 +6,21 @@ android:
   components:
   - platform-tools
   - tools
-  - build-tools-27.0.3
-  - android-27
+  - build-tools-28.0.3
+  - android-28
 
-script: "./gradlew assembleRelease"
+cache:
+  directories:
+  - .autoconf
+  - $HOME/.m2
+
+script:
+    - ./gradlew clean assembleDebug test lint
 
 deploy:
   provider: script
+  script: ./gradlew :databinding:bintrayUpload :dagger:bintrayUpload
   skip_cleanup: true
+  dry-run: false
   on:
-    all_branches: true
+    tags: true
