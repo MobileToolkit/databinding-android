@@ -9,7 +9,7 @@ import android.support.v7.app.AppCompatActivity
  * Created by Sebastian Owodzin on 29/03/2018.
  */
 abstract class BindingAppCompatActivity<T : ViewDataBinding>(
-        protected val layoutId: Int
+    protected val layoutId: Int
 ) : AppCompatActivity() {
 
     protected lateinit var binding: T
