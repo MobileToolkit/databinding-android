@@ -18,9 +18,13 @@ abstract class BindingDialogFragment<T : ViewDataBinding>(
     protected var binding: T? = null
         private set
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
-        return binding?.root
+        activity?.layoutInflater?.let {
+            binding = DataBindingUtil.inflate(it, layoutId, null, false)
+        }
     }
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? = binding?.root
 }
