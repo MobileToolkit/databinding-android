@@ -11,16 +11,16 @@ import dagger.android.support.DaggerAppCompatDialogFragment
 /**
  * Created by Sebastian Owodzin on 04/04/2018.
  */
-abstract class BindingAppCompatDialogFragment<T : ViewDataBinding> : DaggerAppCompatDialogFragment() {
+abstract class BindingAppCompatDialogFragment<T : ViewDataBinding>(
+    protected val layoutId: Int
+) : DaggerAppCompatDialogFragment() {
 
-    protected lateinit var binding: T
+    protected var binding: T? = null
         private set
-
-    protected abstract val layoutId: Int
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
 
-        return binding.root
+        return binding?.root
     }
 }

@@ -15,12 +15,12 @@ abstract class BindingFragment<T : ViewDataBinding>(
     protected val layoutId: Int
 ) : DaggerFragment() {
 
-    protected lateinit var binding: T
+    protected var binding: T? = null
         private set
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
 
-        return binding.root
+        return binding?.root
     }
 }

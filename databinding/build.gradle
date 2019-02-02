@@ -51,7 +51,7 @@ dependencies {
     testImplementation "org.jetbrains.kotlin:kotlin-test-junit:${rootProject.ext.kotlinVersion}"
 }
 
-archivesBaseName = 'org.mobiletoolkit.android.databinding.core'
+archivesBaseName = 'org.mobiletoolkit.android.databinding.databinding'
 
 publishing {
     publications {

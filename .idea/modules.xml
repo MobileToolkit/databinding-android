@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/dagger/dagger.iml" filepath="$PROJECT_DIR$/dagger/dagger.iml" />
       <module fileurl="file://$PROJECT_DIR$/databinding/databinding.iml" filepath="$PROJECT_DIR$/databinding/databinding.iml" />
       <module fileurl="file://$PROJECT_DIR$/databinding-android.iml" filepath="$PROJECT_DIR$/databinding-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/databinding-dagger/databinding-dagger.iml" filepath="$PROJECT_DIR$/databinding-dagger/databinding-dagger.iml" />
     </modules>
   </component>
 </project>

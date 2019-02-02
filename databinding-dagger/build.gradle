@@ -41,11 +41,12 @@ android {
 }
 
 ext {
-    daggerVersion = '2.19'
+    daggerVersion = '2.21'
 }
 
 dependencies {
     implementation "com.android.support:appcompat-v7:${rootProject.ext.androidSupportLibraryVersion}"
+    implementation "com.android.support:recyclerview-v7:${rootProject.ext.androidSupportLibraryVersion}"
     implementation "com.google.dagger:dagger:${project.ext.daggerVersion}"
     implementation "com.google.dagger:dagger-android:${project.ext.daggerVersion}"
     implementation "com.google.dagger:dagger-android-support:${project.ext.daggerVersion}"
@@ -57,13 +58,13 @@ dependencies {
     testImplementation "org.jetbrains.kotlin:kotlin-test-junit:${rootProject.ext.kotlinVersion}"
 }
 
-archivesBaseName = 'org.mobiletoolkit.android.databinding.dagger'
+archivesBaseName = 'org.mobiletoolkit.android.databinding.databindingdagger'
 
 publishing {
     publications {
         dagger(MavenPublication) {
             groupId = 'org.mobiletoolkit.android.databinding'
-            artifactId = 'dagger'
+            artifactId = 'databinding-dagger'
             version = android.defaultConfig.versionName
 
             from components.android

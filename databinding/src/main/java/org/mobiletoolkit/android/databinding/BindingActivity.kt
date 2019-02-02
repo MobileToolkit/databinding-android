@@ -1,18 +1,18 @@
-package org.mobiletoolkit.android.databinding.dagger.support
+package org.mobiletoolkit.android.databinding
 
+import android.app.Activity
 import android.databinding.DataBindingUtil
 import android.databinding.ViewDataBinding
 import android.os.Bundle
-import dagger.android.support.DaggerAppCompatActivity
 
 /**
- * Created by Sebastian Owodzin on 29/03/2018.
+ * Created by Sebastian Owodzin on 02/002/2019.
  */
-abstract class BindingAppCompatActivity<T : ViewDataBinding>(
+abstract class BindingActivity<T : ViewDataBinding>(
     protected val layoutId: Int
-) : DaggerAppCompatActivity() {
+) : Activity() {
 
-    protected lateinit var binding: T
+    protected var binding: T? = null
         private set
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -19,8 +19,14 @@ abstract class BindingViewHolder<out Binding : ViewDataBinding, ViewModel>(
         layoutId,
         container,
         false
-    )
+    ),
+    protected val viewModelVariableId: Int? = null
 ) : RecyclerView.ViewHolder(binding.root) {
 
-    abstract fun bind(viewModel: ViewModel)
+    open fun bind(viewModel: ViewModel) {
+        viewModelVariableId?.let {
+            binding.setVariable(viewModelVariableId, viewModel)
+            binding.executePendingBindings()
+        }
+    }
 }
