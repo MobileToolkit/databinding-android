@@ -19,8 +19,8 @@ script:
 
 deploy:
   provider: script
-  script: ./gradlew bintrayUpload
-  skip_cleanup: true
+  script: ./gradlew clean assembleRelease generatePomFileForDatabindingPublication generatePomFileForDaggerPublication bintrayUpload
+  skip_cleanup: false
   dry-run: false
   on:
     tags: true
