@@ -51,12 +51,12 @@ dependencies {
     testImplementation "org.jetbrains.kotlin:kotlin-test-junit:${rootProject.ext.kotlinVersion}"
 }
 
-archivesBaseName = 'org.mobiletoolkit.android.databinding.databinding'
+archivesBaseName = "${rootProject.ext.groupId}.databinding"
 
 publishing {
     publications {
         databinding(MavenPublication) {
-            groupId = 'org.mobiletoolkit.android.databinding'
+            groupId = rootProject.ext.groupId
             artifactId = 'databinding'
             version = android.defaultConfig.versionName
 
@@ -76,7 +76,7 @@ bintray {
         name = project.name
         userOrg = 'mobiletoolkit'
         licenses = ['MIT']
-        vcsUrl = 'https://github.com/MobileToolkit/databinding-android.git'
+        vcsUrl = rootProject.ext.vcsUrl
 
         version {
             name = android.defaultConfig.versionName
