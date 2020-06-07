@@ -1,19 +1,19 @@
-package org.mobiletoolkit.android.databinding.support
+package org.mobiletoolkit.android.databinding
 
-import android.databinding.DataBindingUtil
-import android.databinding.ViewDataBinding
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatDialogFragment
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 
 /**
  * Created by Sebastian Owodzin on 04/04/2018.
  */
-abstract class BindingFragment<T : ViewDataBinding>(
+abstract class BindingAppCompatDialogFragment<T : ViewDataBinding>(
     protected val layoutId: Int
-) : Fragment() {
+) : AppCompatDialogFragment() {
 
     protected var binding: T? = null
         private set

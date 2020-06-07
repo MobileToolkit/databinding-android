@@ -1,9 +1,9 @@
-package org.mobiletoolkit.android.databinding.support
+package org.mobiletoolkit.android.databinding
 
-import android.databinding.DataBindingUtil
-import android.databinding.ViewDataBinding
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 
 /**
  * Created by Sebastian Owodzin on 29/03/2018.

@@ -1,19 +1,19 @@
-package org.mobiletoolkit.android.databinding.dagger.support
+package org.mobiletoolkit.android.databinding.dagger
 
-import android.databinding.DataBindingUtil
-import android.databinding.ViewDataBinding
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import dagger.android.support.DaggerDialogFragment
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
+import dagger.android.support.DaggerAppCompatDialogFragment
 
 /**
- * Created by Sebastian Owodzin on 05/04/2018.
+ * Created by Sebastian Owodzin on 04/04/2018.
  */
-abstract class BindingDialogFragment<T : ViewDataBinding>(
+abstract class BindingAppCompatDialogFragment<T : ViewDataBinding>(
     protected val layoutId: Int
-) : DaggerDialogFragment() {
+) : DaggerAppCompatDialogFragment() {
 
     protected var binding: T? = null
         private set
