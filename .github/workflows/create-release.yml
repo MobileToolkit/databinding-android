@@ -1,11 +1,9 @@
-on:
-  pull_request:
-    branches:
-      - master
-    paths-ignore:
-      - "**.md"
+name: "Create release"
 
-name: Build & test
+on:
+  push:
+    tags:
+      - "*"
 
 jobs:
   build-test:
@@ -34,5 +32,16 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
-      - name: Build
-        run: ./gradlew assemble
+      - name: Publish to Bintray
+        run: ./gradlew assembleRelease generatePomFileForDatabindingPublication generatePomFileForDatabindingdaggerPublication bintrayUpload
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
