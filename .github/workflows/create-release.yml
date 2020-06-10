@@ -6,7 +6,7 @@ on:
       - "*"
 
 jobs:
-  build-test:
+  create-release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -33,6 +33,10 @@ jobs:
             ${{ runner.os }}-gradle-
 
       - name: Publish to Bintray
+        env:
+          BINTRAY_USER: ${{ secrets.BINTRAY_USER }}
+          BINTRAY_API_KEY: ${{ secrets.BINTRAY_API_KEY }}
+          BINTRAY_GPG_PASSWORD: ${{ secrets.BINTRAY_GPG_PASSWORD }}
         run: ./gradlew assembleRelease generatePomFileForDatabindingPublication generatePomFileForDatabindingdaggerPublication bintrayUpload
 
       - name: Publish to GitHub Packages
