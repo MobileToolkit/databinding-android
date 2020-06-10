@@ -1,8 +1,8 @@
 package org.mobiletoolkit.android.databinding.dagger
 
-import android.databinding.DataBindingUtil
-import android.databinding.ViewDataBinding
 import android.os.Bundle
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 import dagger.android.DaggerActivity
 
 /**

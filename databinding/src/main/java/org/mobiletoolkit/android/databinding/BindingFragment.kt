@@ -1,19 +1,15 @@
 package org.mobiletoolkit.android.databinding
 
-import android.app.Fragment
-import android.databinding.DataBindingUtil
-import android.databinding.ViewDataBinding
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
+import androidx.fragment.app.Fragment
 
 /**
  * Created by Sebastian Owodzin on 04/04/2018.
- *
- * @deprecated Framework fragments are deprecated in Android P; prefer {@code
- *     org.mobiletoolkit.android.databinding.support.BindingFragment} to use a support-library-friendly
- *     fragment implementation.
  */
 abstract class BindingFragment<T : ViewDataBinding>(
     protected val layoutId: Int

@@ -1,16 +1,16 @@
 package org.mobiletoolkit.android.databinding
 
-import android.app.Activity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import androidx.fragment.app.FragmentActivity
 
 /**
- * Created by Sebastian Owodzin on 02/002/2019.
+ * Created by Sebastian Owodzin on 07/06/2020.
  */
-abstract class BindingActivity<T : ViewDataBinding>(
+abstract class BindingFragmentActivity<T : ViewDataBinding>(
     protected val layoutId: Int
-) : Activity() {
+) : FragmentActivity() {
 
     protected var binding: T? = null
         private set
