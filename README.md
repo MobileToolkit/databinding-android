@@ -1,6 +1,7 @@
 # Android data binding extensions 
 
-[![Build Status](https://travis-ci.org/MobileToolkit/databinding-android.svg?branch=master)](https://travis-ci.org/MobileToolkit/databinding-android)
+![](https://github.com/MobileToolkit/databinding-android/workflows/.github/workflows/build-test.yml/badge.svg)
+![](https://github.com/MobileToolkit/databinding-android/workflows/.github/workflows/validation.yml/badge.svg)
 
 A set of Android Databinding enabled activities, fragments, etc. (also Dagger variants).
 
@@ -27,10 +28,10 @@ repositories {
 ```
 
 ```groovy
-	dependencies {
-	    implementation("org.mobiletoolkit.android.databinding:databinding:{RELEASE_TAG}"
-	    implementation("org.mobiletoolkit.android.databinding:databinding-dagger:{RELEASE_TAG}")
-	}
+dependencies {
+    implementation("org.mobiletoolkit.android.databinding:databinding:{RELEASE_TAG}"
+    implementation("org.mobiletoolkit.android.databinding:databinding-dagger:{RELEASE_TAG}")
+}
 ```
 
 
