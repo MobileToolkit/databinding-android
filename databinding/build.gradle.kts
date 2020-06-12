@@ -54,7 +54,7 @@ publishing {
         create<MavenPublication>("databinding") {
             from(components["android"])
             groupId = "${project.extra["groupId"]}"
-            artifactId = name
+            artifactId = "databinding"
             version = "${android.defaultConfig.versionName}"
         }
     }

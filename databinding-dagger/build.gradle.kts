@@ -54,10 +54,10 @@ dependencies {
 
 publishing {
     publications {
-        create<MavenPublication>("databindingdagger") {
+        create<MavenPublication>("databindingDagger") {
             from(components["android"])
             groupId = "${project.extra["groupId"]}"
-            artifactId = name
+            artifactId = "databinding-dagger"
             version = "${android.defaultConfig.versionName}"
         }
     }

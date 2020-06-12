@@ -29,7 +29,7 @@ repositories {
 
 ```groovy
 dependencies {
-    implementation("org.mobiletoolkit.android.databinding:databinding:{RELEASE_TAG}"
+    implementation("org.mobiletoolkit.android.databinding:databinding:{RELEASE_TAG}")
     implementation("org.mobiletoolkit.android.databinding:databinding-dagger:{RELEASE_TAG}")
 }
 ```
