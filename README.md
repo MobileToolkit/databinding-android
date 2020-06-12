@@ -1,7 +1,7 @@
 # Android data binding extensions 
 
-![](https://github.com/MobileToolkit/databinding-android/workflows/.github/workflows/build-test.yml/badge.svg)
-![](https://github.com/MobileToolkit/databinding-android/workflows/.github/workflows/validation.yml/badge.svg)
+![Build / test](https://github.com/MobileToolkit/databinding-android/workflows/Build%20/%20test/badge.svg)
+![Validation](https://github.com/MobileToolkit/databinding-android/workflows/Validation/badge.svg)
 
 A set of Android Databinding enabled activities, fragments, etc. (also Dagger variants).
 
