@@ -1,3 +1,5 @@
+name: "Build / test"
+
 on:
   push:
     branches:
@@ -9,8 +11,6 @@ on:
       - master
     paths-ignore:
       - "**.md"
-
-name: Build & test
 
 jobs:
   build-test:

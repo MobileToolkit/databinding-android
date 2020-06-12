@@ -1,3 +1,5 @@
+name: "Validate Gradle Wrapper"
+
 on:
   push:
     branches:
@@ -9,8 +11,6 @@ on:
       - master
     paths:
       - gradle/**
-
-name: Validate Gradle Wrapper
 
 jobs:
   validation:
