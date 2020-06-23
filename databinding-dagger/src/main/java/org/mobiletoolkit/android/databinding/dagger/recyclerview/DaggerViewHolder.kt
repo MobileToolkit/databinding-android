@@ -25,7 +25,5 @@ abstract class DaggerViewHolder(
         AndroidInjection.inject(this)
     }
 
-    override fun androidInjector(): AndroidInjector<Any> {
-        return androidInjector
-    }
+    override fun androidInjector(): AndroidInjector<Any> = androidInjector
 }

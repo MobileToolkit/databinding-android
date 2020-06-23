@@ -37,4 +37,60 @@ dependencies {
 
 ## How to use
 
-TODO
+### databinding
+
+* BindingActivity
+
+```kotlin
+class FooActivity : BindingActivity<FooBarActivityBinding>(R.layout.activity_foo)
+```
+
+* BindingAppCompatActivity
+
+```kotlin
+class FooActivity : BindingAppCompatActivity<FooBarActivityBinding>(R.layout.activity_foo)
+```
+
+* BindingAppCompatDialogFragment
+
+```kotlin
+class FooDialog : BindingAppCompatDialogFragment<FooBarActivityBinding>(R.layout.dialog_foo)
+```
+
+* BindingDialogFragment
+
+```kotlin
+class FooDialog : BindingDialogFragment<FooBarActivityBinding>(R.layout.dialog_foo)
+```
+
+* BindingFragment
+
+```kotlin
+class FooFragment : BindingFragment<FooBarActivityBinding>(R.layout.fragment_foo)
+```
+
+* BindingFragmentActivity
+
+```kotlin
+class FooFragment : BindingFragmentActivity<FooBarActivityBinding>(R.layout.fragment_foo)
+```
+
+* BindingViewHolder
+
+```kotlin
+data class FooViewModel(val bar: Int)
+
+class FooBarViewHolder(
+    context: Context?,
+    container: ViewGroup?
+) : BindingViewHolder<FooBarViewHolderBinding, FooViewModel>(
+    R.layout.layout_foobar,
+    context,
+    container,
+    viewModelVariableId = BR.viewModel
+)
+```
+
+### databinding-dagger
+
+Same as for databinding, just includes Dagger 2 injections.

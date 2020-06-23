@@ -1,42 +1,14 @@
-import org.ajoberstar.grgit.Grgit
-import org.ajoberstar.grgit.operation.DescribeOp
-import org.ajoberstar.grgit.operation.LogOp
-
+/**
+ * Created by Sebastian Owodzin on 23/06/2020
+ */
 object Versions {
-    const val MIN_ANDROID_SDK = 21
-    const val TARGET_ANDROID_SDK = 29
+    const val MinAndroidSDK = 21
+    const val TargetAndroidSDK = 29
 
-    const val DAGGER = "2.27"
-
-    private val git by lazy {
-        Grgit.open()
+    object Androidx {
+        const val AppCompat = "1.1.0"
+        const val RecyclerView = "1.1.0"
     }
 
-    fun gitVersionCode(): Int {
-        try {
-            val log = LogOp(git.repository).apply { includes = listOf("HEAD") }.call()
-
-            println("gitVersionCode: ${log.size}")
-
-            return log.size
-        } catch (ex: RuntimeException) {
-
-        }
-
-        return 1
-    }
-
-    fun gitVersionName(): String {
-        try {
-            val describe = DescribeOp(git.repository).apply { tags = true }.call()
-
-            println("gitVersionName: $describe")
-
-            return describe
-        } catch (ex: RuntimeException) {
-
-        }
-
-        return "0.0.0"
-    }
+    const val Dagger = "2.28.1"
 }

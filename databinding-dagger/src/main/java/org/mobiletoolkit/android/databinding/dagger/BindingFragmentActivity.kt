@@ -2,14 +2,14 @@ package org.mobiletoolkit.android.databinding.dagger
 
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import dagger.android.support.DaggerAppCompatActivity
+import org.mobiletoolkit.android.databinding.dagger.fragment.DaggerFragmentActivity
 
 /**
- * Created by Sebastian Owodzin on 29/03/2018.
+ * Created by Sebastian Owodzin on 23/06/2020
  */
-abstract class BindingAppCompatActivity<T : ViewDataBinding>(
+abstract class BindingFragmentActivity<T : ViewDataBinding>(
     protected val layoutId: Int
-) : DaggerAppCompatActivity() {
+) : DaggerFragmentActivity() {
 
     protected val binding: T by lazy {
         DataBindingUtil.setContentView(this, layoutId) as T

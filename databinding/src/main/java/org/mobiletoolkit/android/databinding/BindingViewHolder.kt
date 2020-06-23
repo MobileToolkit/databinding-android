@@ -11,9 +11,9 @@ import androidx.recyclerview.widget.RecyclerView
  * Created by Sebastian Owodzin on 11/04/2018.
  */
 abstract class BindingViewHolder<out Binding : ViewDataBinding, ViewModel>(
-    protected val context: Context?,
     protected val layoutId: Int,
-    protected val container: ViewGroup?,
+    protected val context: Context? = null,
+    protected val container: ViewGroup? = null,
     protected val binding: Binding = DataBindingUtil.inflate(
         LayoutInflater.from(context),
         layoutId,
