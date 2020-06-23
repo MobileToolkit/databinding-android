@@ -15,12 +15,12 @@ abstract class BindingAppCompatDialogFragment<T : ViewDataBinding>(
     protected val layoutId: Int
 ) : DaggerAppCompatDialogFragment() {
 
-    protected var binding: T? = null
+    protected lateinit var binding: T
         private set
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
 
-        return binding?.root
+        return binding.root
     }
 }

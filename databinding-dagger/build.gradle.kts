@@ -8,41 +8,15 @@ plugins {
 }
 
 android {
-    compileSdkVersion(Versions.TARGET_ANDROID_SDK)
-
-    defaultConfig {
-        minSdkVersion(Versions.MIN_ANDROID_SDK)
-        targetSdkVersion(Versions.TARGET_ANDROID_SDK)
-        versionCode = Versions.gitVersionCode()
-        versionName = Versions.gitVersionName()
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        testInstrumentationRunnerArguments(mapOf("clearPackageData" to "true"))
-
-        consumerProguardFiles("proguard-rules.pro")
-    }
-
-    buildFeatures {
-        dataBinding = true
-    }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-
-    testOptions {
-        unitTests.isReturnDefaultValues = true
-        execution = "ANDROIDX_TEST_ORCHESTRATOR"
-    }
+    androidLibrary()
 }
 
 dependencies {
-    implementation("androidx.appcompat:appcompat:1.1.0")
-    implementation("androidx.recyclerview:recyclerview:1.1.0")
-    implementation("com.google.dagger:dagger:${Versions.DAGGER}")
-    implementation("com.google.dagger:dagger-android:${Versions.DAGGER}")
-    implementation("com.google.dagger:dagger-android-support:${Versions.DAGGER}")
+    implementation("androidx.appcompat:appcompat:${Versions.Androidx.AppCompat}")
+    implementation("androidx.recyclerview:recyclerview:${Versions.Androidx.RecyclerView}")
+    implementation("com.google.dagger:dagger:${Versions.Dagger}")
+    implementation("com.google.dagger:dagger-android:${Versions.Dagger}")
+    implementation("com.google.dagger:dagger-android-support:${Versions.Dagger}")
     implementation(kotlin("stdlib-jdk8", KotlinCompilerVersion.VERSION))
 
     androidTestImplementation("androidx.test:runner:1.2.0")
@@ -98,5 +72,5 @@ bintray {
         }
     }
 
-    setPublications("databindingdagger")
+    setPublications("databindingDagger")
 }

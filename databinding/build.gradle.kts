@@ -8,38 +8,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion(Versions.TARGET_ANDROID_SDK)
-
-    defaultConfig {
-        minSdkVersion(Versions.MIN_ANDROID_SDK)
-        targetSdkVersion(Versions.TARGET_ANDROID_SDK)
-        versionCode = Versions.gitVersionCode()
-        versionName = Versions.gitVersionName()
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        testInstrumentationRunnerArguments(mapOf("clearPackageData" to "true"))
-
-        consumerProguardFiles("proguard-rules.pro")
-    }
-
-    buildFeatures {
-        dataBinding = true
-    }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-
-    testOptions {
-        unitTests.isReturnDefaultValues = true
-        execution = "ANDROIDX_TEST_ORCHESTRATOR"
-    }
+    androidLibrary()
 }
 
 dependencies {
-    implementation("androidx.appcompat:appcompat:1.1.0")
-    implementation("androidx.recyclerview:recyclerview:1.1.0")
+    implementation("androidx.appcompat:appcompat:${Versions.Androidx.AppCompat}")
+    implementation("androidx.recyclerview:recyclerview:${Versions.Androidx.RecyclerView}")
     implementation(kotlin("stdlib-jdk8", KotlinCompilerVersion.VERSION))
 
     androidTestImplementation("androidx.test:runner:1.2.0")
