@@ -12,8 +12,8 @@ android {
 }
 
 dependencies {
-    implementation("androidx.appcompat:appcompat:${Versions.Androidx.AppCompat}")
-    implementation("androidx.recyclerview:recyclerview:${Versions.Androidx.RecyclerView}")
+    implementation("androidx.appcompat:appcompat:${Versions.Androidx.APP_COMPAT}")
+    implementation("androidx.recyclerview:recyclerview:${Versions.Androidx.RECYCLER_VIEW}")
     implementation(kotlin("stdlib-jdk8", KotlinCompilerVersion.VERSION))
 
     androidTestImplementation("androidx.test:runner:1.2.0")
@@ -29,7 +29,7 @@ publishing {
             from(components["android"])
             groupId = "${project.extra["groupId"]}"
             artifactId = "databinding"
-            version = "${android.defaultConfig.versionName}"
+            version = android.defaultConfig.versionName
         }
     }
     repositories {

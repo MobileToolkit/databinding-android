@@ -5,11 +5,11 @@ import org.gradle.api.JavaVersion
  * Created by Sebastian Owodzin on 23/06/2020
  */
 fun LibraryExtension.androidLibrary() {
-    compileSdkVersion(Versions.TargetAndroidSDK)
+    compileSdkVersion(Versions.TARGET_ANDROID_SDK)
 
     defaultConfig {
-        minSdkVersion(Versions.MinAndroidSDK)
-        targetSdkVersion(Versions.TargetAndroidSDK)
+        minSdkVersion(Versions.MIN_ANDROID_SDK)
+        targetSdkVersion(Versions.TARGET_ANDROID_SDK)
         versionCode = Git.gitVersionCode()
         versionName = Git.gitVersionName()
 
