@@ -1,1 +1,4 @@
-include(":databinding", ":databinding-dagger")
+include(
+    ":databinding",
+    ":databinding-dagger"
+)

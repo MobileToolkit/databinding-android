@@ -12,12 +12,11 @@ android {
 }
 
 dependencies {
-    implementation("androidx.appcompat:appcompat:${Versions.Androidx.AppCompat}")
-    implementation("androidx.recyclerview:recyclerview:${Versions.Androidx.RecyclerView}")
-    implementation("com.google.dagger:dagger:${Versions.Dagger}")
-    implementation("com.google.dagger:dagger-android:${Versions.Dagger}")
-    implementation("com.google.dagger:dagger-android-support:${Versions.Dagger}")
-    implementation(kotlin("stdlib-jdk8", KotlinCompilerVersion.VERSION))
+    implementation("androidx.appcompat:appcompat:${Versions.Androidx.APP_COMPAT}")
+    implementation("androidx.recyclerview:recyclerview:${Versions.Androidx.RECYCLER_VIEW}")
+    implementation("com.google.dagger:dagger:${Versions.DAGGER}")
+    implementation("com.google.dagger:dagger-android:${Versions.DAGGER}")
+    implementation("com.google.dagger:dagger-android-support:${Versions.DAGGER}")
 
     androidTestImplementation("androidx.test:runner:1.2.0")
     androidTestImplementation("androidx.test.ext:junit:1.1.1")
@@ -32,7 +31,7 @@ publishing {
             from(components["android"])
             groupId = "${project.extra["groupId"]}"
             artifactId = "databinding-dagger"
-            version = "${android.defaultConfig.versionName}"
+            version = android.defaultConfig.versionName
         }
     }
     repositories {
