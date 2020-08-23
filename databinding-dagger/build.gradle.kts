@@ -17,7 +17,6 @@ dependencies {
     implementation("com.google.dagger:dagger:${Versions.DAGGER}")
     implementation("com.google.dagger:dagger-android:${Versions.DAGGER}")
     implementation("com.google.dagger:dagger-android-support:${Versions.DAGGER}")
-    implementation(kotlin("stdlib-jdk8", KotlinCompilerVersion.VERSION))
 
     androidTestImplementation("androidx.test:runner:1.2.0")
     androidTestImplementation("androidx.test.ext:junit:1.1.1")

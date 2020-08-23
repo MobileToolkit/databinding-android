@@ -14,7 +14,6 @@ android {
 dependencies {
     implementation("androidx.appcompat:appcompat:${Versions.Androidx.APP_COMPAT}")
     implementation("androidx.recyclerview:recyclerview:${Versions.Androidx.RECYCLER_VIEW}")
-    implementation(kotlin("stdlib-jdk8", KotlinCompilerVersion.VERSION))
 
     androidTestImplementation("androidx.test:runner:1.2.0")
     androidTestImplementation("androidx.test.ext:junit:1.1.1")
