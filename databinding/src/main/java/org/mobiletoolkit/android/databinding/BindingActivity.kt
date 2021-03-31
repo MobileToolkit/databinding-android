@@ -8,11 +8,11 @@ import androidx.databinding.ViewDataBinding
 /**
  * Created by Sebastian Owodzin on 02/002/2019.
  */
-abstract class BindingActivity<T : ViewDataBinding>(
+abstract class BindingActivity<Binding : ViewDataBinding>(
     protected val layoutId: Int
 ) : Activity() {
 
-    protected var binding: T? = null
+    protected lateinit var binding: Binding
         private set
 
     override fun onCreate(savedInstanceState: Bundle?) {

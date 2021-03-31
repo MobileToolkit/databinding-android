@@ -8,11 +8,11 @@ import dagger.android.support.DaggerAppCompatActivity
 /**
  * Created by Sebastian Owodzin on 29/03/2018.
  */
-abstract class BindingAppCompatActivity<T : ViewDataBinding>(
+abstract class BindingAppCompatActivity<Binding : ViewDataBinding>(
     protected val layoutId: Int
 ) : DaggerAppCompatActivity() {
 
-    protected var binding: T? = null
+    protected lateinit var binding: Binding
         private set
 
     override fun onCreate(savedInstanceState: Bundle?) {

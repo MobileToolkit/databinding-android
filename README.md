@@ -84,8 +84,8 @@ class FooBarViewHolder(
     context: Context?,
     container: ViewGroup?
 ) : BindingViewHolder<FooBarViewHolderBinding, FooViewModel>(
-    R.layout.layout_foobar,
     context,
+    R.layout.layout_foobar,
     container,
     viewModelVariableId = BR.viewModel
 )

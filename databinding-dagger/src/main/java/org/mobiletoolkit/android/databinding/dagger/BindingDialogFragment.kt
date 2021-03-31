@@ -11,11 +11,11 @@ import dagger.android.support.DaggerDialogFragment
 /**
  * Created by Sebastian Owodzin on 05/04/2018.
  */
-abstract class BindingDialogFragment<T : ViewDataBinding>(
+abstract class BindingDialogFragment<Binding : ViewDataBinding>(
     protected val layoutId: Int
 ) : DaggerDialogFragment() {
 
-    protected lateinit var binding: T
+    protected lateinit var binding: Binding
         private set
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

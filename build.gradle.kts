@@ -4,10 +4,10 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:4.0.1")
-        classpath("com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.5")
+        classpath("com.android.tools.build:gradle:4.1.3")
+//        classpath("com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.5")
         classpath("digital.wup:android-maven-publish:3.6.2")
-        classpath(kotlin("gradle-plugin", "1.4.0"))
+        classpath(kotlin("gradle-plugin", "1.4.21"))
     }
 }
 

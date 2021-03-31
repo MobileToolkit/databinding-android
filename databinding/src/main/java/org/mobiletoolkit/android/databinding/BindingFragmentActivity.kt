@@ -8,11 +8,11 @@ import androidx.fragment.app.FragmentActivity
 /**
  * Created by Sebastian Owodzin on 07/06/2020.
  */
-abstract class BindingFragmentActivity<T : ViewDataBinding>(
+abstract class BindingFragmentActivity<Binding : ViewDataBinding>(
     protected val layoutId: Int
 ) : FragmentActivity() {
 
-    protected var binding: T? = null
+    protected lateinit var binding: Binding
         private set
 
     override fun onCreate(savedInstanceState: Bundle?) {

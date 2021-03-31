@@ -3,12 +3,12 @@
  */
 object Versions {
     const val MIN_ANDROID_SDK = 21
-    const val TARGET_ANDROID_SDK = 29
+    const val TARGET_ANDROID_SDK = 30
 
     object Androidx {
         const val APP_COMPAT = "1.2.0"
         const val RECYCLER_VIEW = "1.1.0"
     }
 
-    const val DAGGER = "2.28.3"
+    const val DAGGER = "2.33"
 }

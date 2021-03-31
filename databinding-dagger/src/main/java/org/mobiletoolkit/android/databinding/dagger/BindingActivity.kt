@@ -8,11 +8,11 @@ import dagger.android.DaggerActivity
 /**
  * Created by Sebastian Owodzin on 29/03/2018.
  */
-abstract class BindingActivity<T : ViewDataBinding>(
+abstract class BindingActivity<Binding : ViewDataBinding>(
     protected val layoutId: Int
 ) : DaggerActivity() {
 
-    protected var binding: T? = null
+    protected lateinit var binding: Binding
         private set
 
     override fun onCreate(savedInstanceState: Bundle?) {

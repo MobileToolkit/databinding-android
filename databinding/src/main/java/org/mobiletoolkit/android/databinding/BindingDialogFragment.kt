@@ -11,11 +11,11 @@ import androidx.fragment.app.DialogFragment
 /**
  * Created by Sebastian Owodzin on 18/06/2018.
  */
-abstract class BindingDialogFragment<T : ViewDataBinding>(
+abstract class BindingDialogFragment<Binding : ViewDataBinding>(
     protected val layoutId: Int
 ) : DialogFragment() {
 
-    protected lateinit var binding: T
+    protected lateinit var binding: Binding
         private set
 
     override fun onCreateView(
