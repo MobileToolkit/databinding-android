@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/databinding/databinding.iml" filepath="$PROJECT_DIR$/databinding/databinding.iml" group="databinding-android/databinding" />
-      <module fileurl="file://$PROJECT_DIR$/databinding-android.iml" filepath="$PROJECT_DIR$/databinding-android.iml" group="databinding-android" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/databinding-android_buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/databinding-android_buildSrc.iml" group="databinding-android/databinding-android_buildSrc" />
-      <module fileurl="file://$PROJECT_DIR$/databinding-dagger/databinding-dagger.iml" filepath="$PROJECT_DIR$/databinding-dagger/databinding-dagger.iml" group="databinding-android/databinding-dagger" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/databinding-android.iml" filepath="$PROJECT_DIR$/.idea/modules/databinding-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/databinding-android.buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/databinding-android.buildSrc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/databinding/databinding-android.databinding.iml" filepath="$PROJECT_DIR$/.idea/modules/databinding/databinding-android.databinding.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/databinding-dagger/databinding-android.databinding-dagger.iml" filepath="$PROJECT_DIR$/.idea/modules/databinding-dagger/databinding-android.databinding-dagger.iml" />
     </modules>
   </component>
 </project>

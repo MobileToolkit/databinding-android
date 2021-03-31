@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import androidx.lifecycle.LifecycleOwner
 import org.mobiletoolkit.android.databinding.dagger.recyclerview.DaggerViewHolder
 
 /**
@@ -22,6 +23,12 @@ abstract class BindingViewHolder<out Binding : ViewDataBinding, ViewModel>(
     ),
     protected val viewModelVariableId: Int? = null
 ) : DaggerViewHolder(binding.root) {
+
+    init {
+        (binding.root.context as? LifecycleOwner)?.let {
+            binding.lifecycleOwner = it
+        }
+    }
 
     open fun bind(viewModel: ViewModel) {
         viewModelVariableId?.let {
