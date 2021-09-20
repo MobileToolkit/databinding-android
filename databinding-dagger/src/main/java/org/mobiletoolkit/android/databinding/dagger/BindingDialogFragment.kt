@@ -15,12 +15,18 @@ abstract class BindingDialogFragment<Binding : ViewDataBinding>(
     protected val layoutId: Int
 ) : DaggerDialogFragment() {
 
-    protected lateinit var binding: Binding
-        private set
+    private var _binding: Binding? = null
+
+    protected val binding: Binding
+        get() = _binding!!
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
-
+        _binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
         return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding
     }
 }

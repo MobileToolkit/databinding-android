@@ -6,9 +6,9 @@ object Versions {
     const val TARGET_ANDROID_SDK = 30
 
     object Androidx {
-        const val APP_COMPAT = "1.2.0"
-        const val RECYCLER_VIEW = "1.1.0"
+        const val APP_COMPAT = "1.3.1"
+        const val RECYCLER_VIEW = "1.2.1"
     }
 
-    const val DAGGER = "2.33"
+    const val DAGGER = "2.38.1"
 }

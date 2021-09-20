@@ -7,15 +7,19 @@ plugins {
 
 android {
     androidLibrary()
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
 
 dependencies {
     implementation("androidx.appcompat:appcompat:${Versions.Androidx.APP_COMPAT}")
     implementation("androidx.recyclerview:recyclerview:${Versions.Androidx.RECYCLER_VIEW}")
 
-    androidTestImplementation("androidx.test:runner:1.2.0")
-    androidTestImplementation("androidx.test.ext:junit:1.1.1")
-    androidTestUtil("androidx.test:orchestrator:1.2.0")
+    androidTestImplementation("androidx.test:runner:1.4.0")
+    androidTestImplementation("androidx.test.ext:junit:1.1.3")
+    androidTestUtil("androidx.test:orchestrator:1.4.0")
 }
 
 publishing {
@@ -38,31 +42,3 @@ publishing {
         }
     }
 }
-
-//bintray {
-//    user = project.findProperty("gpr.bintrayUser") as String? ?: System.getenv("BINTRAY_USER")
-//    key = project.findProperty("gpr.bintrayAPIKey") as String? ?: System.getenv("BINTRAY_API_KEY")
-//    dryRun = false
-//    override = false
-//    publish = true
-//
-//    pkg.apply {
-//        repo = "public"
-//        name = project.name
-//        userOrg = "mobiletoolkit"
-//        setLicenses("MIT")
-//        vcsUrl = "${project.extra["vcsUrl"]}"
-//
-//        version.apply {
-//            name = android.defaultConfig.versionName
-//            vcsTag = android.defaultConfig.versionName
-//            gpg.apply {
-//                sign = true
-//                passphrase = project.findProperty("gpr.bintrayGPGPassword") as String?
-//                    ?: System.getenv("BINTRAY_GPG_PASSWORD")
-//            }
-//        }
-//    }
-//
-//    setPublications("databinding")
-//}
