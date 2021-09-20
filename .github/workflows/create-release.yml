@@ -35,18 +35,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
-#      - name: Publish to Bintray
-#        env:
-#          BINTRAY_USER: ${{ secrets.BINTRAY_USER }}
-#          BINTRAY_API_KEY: ${{ secrets.BINTRAY_API_KEY }}
-#          BINTRAY_GPG_PASSWORD: ${{ secrets.BINTRAY_GPG_PASSWORD }}
-#        run: ./gradlew assembleRelease generatePomFileForDatabindingPublication generatePomFileForDatabindingDaggerPublication bintrayUpload
-
       - name: Publish to GitHub Packages
         env:
           GITHUB_USER: ${{ secrets.GITHUB_USER }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: ./gradlew publishAllPublicationsToGitHubPackagesRepository
+        run: ./gradlew publishAllPublicationsToMavenRepository
 
       - name: Create Release
         id: create_release

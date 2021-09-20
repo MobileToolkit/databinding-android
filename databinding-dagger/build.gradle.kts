@@ -1,7 +1,6 @@
 plugins {
     id("com.android.library")
-//    id("com.jfrog.bintray")
-    id("digital.wup.android-maven-publish")
+    id("maven-publish")
     kotlin("android")
 }
 
@@ -25,22 +24,27 @@ dependencies {
     androidTestUtil("androidx.test:orchestrator:1.4.0")
 }
 
-publishing {
-    publications {
-        create<MavenPublication>("databindingDagger") {
-            from(components["android"])
-            groupId = "${project.extra["groupId"]}"
-            artifactId = "databinding-dagger"
-            version = android.defaultConfig.versionName
+base {
+    archivesBaseName = "${project.extra["groupId"]}.databindingdagger"
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                from(components["release"])
+                groupId = "${project.extra["groupId"]}"
+                artifactId = "databinding-dagger"
+                version = android.defaultConfig.versionName
+            }
         }
-    }
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/MobileToolkit/databinding-android")
-            credentials {
-                username = project.findProperty("gpr.githubUser") as String? ?: System.getenv("GITHUB_USER")
-                password = project.findProperty("gpr.githubToken") as String? ?: System.getenv("GITHUB_TOKEN")
+        repositories {
+            maven {
+                url = uri("https://maven.pkg.github.com/MobileToolkit/databinding-android")
+                credentials {
+                    username = project.findProperty("gpr.githubUser") as String? ?: System.getenv("GITHUB_USER")
+                    password = project.findProperty("gpr.githubToken") as String? ?: System.getenv("GITHUB_TOKEN")
+                }
             }
         }
     }
