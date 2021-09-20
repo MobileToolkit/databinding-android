@@ -10,8 +10,6 @@ fun LibraryExtension.androidLibrary() {
     defaultConfig {
         minSdkVersion(Versions.MIN_ANDROID_SDK)
         targetSdkVersion(Versions.TARGET_ANDROID_SDK)
-        versionCode = Git.gitVersionCode()
-        versionName = Git.gitVersionName()
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         testInstrumentationRunnerArguments(mapOf("clearPackageData" to "true"))

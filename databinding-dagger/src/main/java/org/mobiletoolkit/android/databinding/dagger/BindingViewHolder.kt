@@ -12,8 +12,8 @@ import org.mobiletoolkit.android.databinding.dagger.recyclerview.DaggerViewHolde
  * Created by Sebastian Owodzin on 07/06/2020.
  */
 abstract class BindingViewHolder<out Binding : ViewDataBinding, ViewModel>(
-    protected val context: Context?,
     protected val layoutId: Int,
+    protected val context: Context?,
     protected val container: ViewGroup?,
     protected val binding: Binding = DataBindingUtil.inflate(
         LayoutInflater.from(context),
