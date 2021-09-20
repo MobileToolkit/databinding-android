@@ -2,6 +2,7 @@ plugins {
     id("com.android.library")
     id("maven-publish")
     kotlin("android")
+    kotlin("kapt")
 }
 
 android {
@@ -39,8 +40,7 @@ afterEvaluate {
             }
         }
         repositories {
-            maven {
-                url = uri("https://maven.pkg.github.com/MobileToolkit/databinding-android")
+            maven("https://maven.pkg.github.com/MobileToolkit/databinding-android") {
                 credentials {
                     username = project.findProperty("gpr.githubUser") as String? ?: System.getenv("GITHUB_USER")
                     password = project.findProperty("gpr.githubToken") as String? ?: System.getenv("GITHUB_TOKEN")
