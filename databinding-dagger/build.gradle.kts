@@ -26,7 +26,7 @@ dependencies {
 }
 
 base {
-    archivesBaseName = "${project.extra["groupId"]}.databindingdagger"
+    archivesBaseName = "org.mobiletoolkit.android.databinding.databindingdagger"
 }
 
 afterEvaluate {
@@ -36,13 +36,13 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "${project.extra["groupId"]}"
                 artifactId = "databinding-dagger"
-                version = android.defaultConfig.versionName
+                version = "2.3.0"
             }
         }
         repositories {
             maven("https://maven.pkg.github.com/MobileToolkit/databinding-android") {
                 credentials {
-                    username = project.findProperty("gpr.githubUser") as String? ?: System.getenv("GITHUB_USER")
+                    username = project.findProperty("gpr.user") as String? ?: System.getenv("GITHUB_USER")
                     password = project.findProperty("gpr.githubToken") as String? ?: System.getenv("GITHUB_TOKEN")
                 }
             }
