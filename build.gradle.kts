@@ -7,7 +7,7 @@ buildscript {
     dependencies {
         classpath("com.android.tools.build:gradle:7.0.2")
         classpath("digital.wup:android-maven-publish:3.6.2")
-        classpath(kotlin("gradle-plugin", "1.4.21"))
+        classpath(kotlin("gradle-plugin", "1.5.31"))
     }
 }
 
